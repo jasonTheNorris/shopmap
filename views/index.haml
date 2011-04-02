@@ -1,0 +1,11 @@
+%h1 Items
+%a.new_link{ href: '/items/new' } New Item
+%ul#items
+  - each item in items
+    %li.item
+      %div.name= item.name
+      %div.price= "$" + item.price
+      %a.edit_link{ href: '/items/' + item.id + '/edit' } Edit
+      %form{ method: 'post', action: '/items/' + item.id }
+        %input{ type: 'hidden', name: '_method', value: 'delete' }
+        %input{ type: 'submit', value: 'Delete' } 

@@ -1,0 +1,12 @@
+%h1 Edit Item
+%form{ method: 'post', action: '/items/'+item.id }
+  %input{ type: 'hidden', name: '_method', value: "put" }
+  %div
+    %div
+      %span Name:
+      %input{ type: 'text', name: 'item[name]', id: 'editItemName', value: item.name }
+    %div
+      %span Price: $
+      %input{ type: 'text', name: 'item[price]', id: 'editItemPrice', value: item.price }
+    %div#newItemSubmit
+      %input{ type: 'submit', value: 'Update' }
